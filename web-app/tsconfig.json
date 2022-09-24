@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "strict": true,
+        "exactOptionalPropertyTypes": true,
+        "lib": ["ESNext", "DOM"],
+        "types": []
+    },
+    "include": ["src"]
+}

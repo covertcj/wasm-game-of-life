@@ -1,6 +1,8 @@
 {
   "recommendations": [
     "swellaby.rust-pack",
-    "streetsidesoftware.code-spell-checker"
+    "streetsidesoftware.code-spell-checker",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint"
   ]
 }

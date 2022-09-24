@@ -1,19 +1,36 @@
-const CopyWebpackPlugin = require("copy-webpack-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-  entry: "./bootstrap.js",
+  entry: './src/bootstrap.ts',
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "bootstrap.js",
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bootstrap.js',
   },
-  mode: "development",
+  mode: 'development',
   plugins: [
     new CopyWebpackPlugin({
-      patterns: ['index.html']
+      patterns: ['src/index.html'],
     }),
   ],
   experiments: {
     asyncWebAssembly: true,
-  }
+  },
+  resolve: {
+    extensions: ['.ts', '.js'],
+  },
+  module: {
+    rules: [
+      {
+        test: /\.ts$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [['@babel/preset-env', { targets: 'defaults' }]],
+          },
+        },
+      },
+    ],
+  },
 };
