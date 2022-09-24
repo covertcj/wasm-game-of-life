@@ -4,9 +4,10 @@ import { createRenderer, GameOfLifeRenderer } from './canvas';
 
 interface GameCanvasProps {
   universe: Universe;
+  paused: boolean;
 }
 
-export const GameCanvas: FC<GameCanvasProps> = ({ universe }) => {
+export const GameCanvas: FC<GameCanvasProps> = ({ universe, paused }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const [renderer, setRenderer] = useState<GameOfLifeRenderer | undefined>();
   const [loopTimer, setLoopTimer] = useState<
@@ -32,7 +33,7 @@ export const GameCanvas: FC<GameCanvasProps> = ({ universe }) => {
       return;
     }
 
-    if (renderer) {
+    if (renderer && !paused) {
       const gameLoop = () => {
         // TODO: this isn't really handled well.  The ticking should be managed
         // by the owner of the universe state, which is the App component
@@ -44,7 +45,7 @@ export const GameCanvas: FC<GameCanvasProps> = ({ universe }) => {
 
       setLoopTimer(requestAnimationFrame(gameLoop));
     }
-  }, [renderer, universe]);
+  }, [renderer, universe, paused]);
 
   return (
     <>
