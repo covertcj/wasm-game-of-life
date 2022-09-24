@@ -1,19 +1,17 @@
 import { Universe, initialize } from 'wasm-game-of-life';
+import { createRenderer } from './canvas';
 
 initialize();
 
-const canvas = document.getElementById('game-of-life-canvas');
-if (!canvas) {
-  throw new Error("Couldn't get element to render the app into");
-}
-
 const universe = Universe.new();
+const renderer = createRenderer(universe.width(), universe.height());
 
-const renderLoop = () => {
-  canvas.textContent = universe.render();
+const gameLoop = () => {
   universe.tick();
 
-  requestAnimationFrame(renderLoop);
+  renderer.render(universe);
+
+  requestAnimationFrame(gameLoop);
 };
 
-requestAnimationFrame(renderLoop);
+requestAnimationFrame(gameLoop);
