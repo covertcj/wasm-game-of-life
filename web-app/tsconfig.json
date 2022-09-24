@@ -1,9 +1,10 @@
 {
-    "compilerOptions": {
-        "strict": true,
-        "exactOptionalPropertyTypes": true,
-        "lib": ["ESNext", "DOM"],
-        "types": []
-    },
-    "include": ["src"]
+  "compilerOptions": {
+    "strict": true,
+    "jsx": "preserve",
+    "exactOptionalPropertyTypes": true,
+    "lib": ["ESNext", "DOM"],
+    "types": []
+  },
+  "include": ["src"]
 }

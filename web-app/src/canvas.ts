@@ -21,7 +21,7 @@ const getCanvasElement = () => {
   return null;
 };
 
-interface GameOfLifeRenderer {
+export interface GameOfLifeRenderer {
   render(universe: Universe): void;
 }
 
@@ -81,14 +81,10 @@ const drawCells = (ctx: CanvasRenderingContext2D, universe: Universe): void => {
 };
 
 export const createRenderer = (
+  canvas: HTMLCanvasElement,
   width: number,
   height: number,
 ): GameOfLifeRenderer => {
-  const canvas = getCanvasElement();
-  if (!canvas) {
-    throw new Error("Couldn't get element to render the app into");
-  }
-
   canvas.width = width * (CELL_SIZE + CELL_BORDER_SIZE) + CELL_BORDER_SIZE;
   canvas.height = height * (CELL_SIZE + CELL_BORDER_SIZE) + CELL_BORDER_SIZE;
 

@@ -17,12 +17,12 @@ module.exports = {
     asyncWebAssembly: true,
   },
   resolve: {
-    extensions: ['.ts', '.js'],
+    extensions: ['.tsx', '.ts', '.js'],
   },
   module: {
     rules: [
       {
-        test: /\.ts$/,
+        test: /\.[jt]sx?$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',

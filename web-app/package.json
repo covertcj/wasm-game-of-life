@@ -22,11 +22,17 @@
   "license": "MIT",
   "homepage": "https://github.com/covertcj/wasm-game-of-life",
   "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "wasm-game-of-life": "file:../pkg"
   },
   "devDependencies": {
     "@babel/plugin-transform-typescript": "^7.19.1",
     "@babel/preset-env": "^7.19.1",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
     "babel-loader": "^8.2.5",
     "copy-webpack-plugin": "^11.0.0",
     "prettier": "^2.7.1",
