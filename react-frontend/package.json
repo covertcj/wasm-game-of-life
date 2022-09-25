@@ -24,7 +24,7 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "wasm-game-of-life": "file:../pkg"
+    "game_of_life": "file:../game_of_life/pkg"
   },
   "devDependencies": {
     "@babel/plugin-transform-typescript": "^7.19.1",

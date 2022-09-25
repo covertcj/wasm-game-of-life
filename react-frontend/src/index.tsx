@@ -1,7 +1,7 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 
-import { Universe, initialize } from 'wasm-game-of-life';
+import { Universe, initialize } from 'game_of_life';
 import { App } from './App';
 import { createRenderer } from './canvas';
 

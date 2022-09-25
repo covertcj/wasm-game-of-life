@@ -1,5 +1,5 @@
 import { FC, useState } from 'react';
-import { Universe } from 'wasm-game-of-life';
+import { Universe } from 'game_of_life';
 import { GameCanvas } from './GameCanvas';
 
 export const App: FC<{}> = () => {

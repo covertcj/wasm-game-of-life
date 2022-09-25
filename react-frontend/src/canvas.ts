@@ -1,5 +1,5 @@
-import { Cell, Universe } from 'wasm-game-of-life';
-import { memory } from 'wasm-game-of-life/wasm_game_of_life_bg.wasm';
+import { Cell, Universe } from 'game_of_life';
+import { memory } from 'game_of_life/game_of_life_bg.wasm';
 
 // TODO: this should all be moveable to a rust webgpu library, bevy maybe?
 

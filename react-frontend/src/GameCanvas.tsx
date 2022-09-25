@@ -1,5 +1,5 @@
 import { FC, useEffect, useRef, useState } from 'react';
-import { Universe } from 'wasm-game-of-life';
+import { Universe } from 'game_of_life';
 import { createRenderer, GameOfLifeRenderer } from './canvas';
 
 interface GameCanvasProps {
